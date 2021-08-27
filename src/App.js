@@ -42,13 +42,6 @@ const AppLabel = styled.span`
   font-size: 18px;
   font-weight: bold;
 `;
-const CloseButton = styled.span`
-  padding: 2px 3px;
-  background-color: black;
-  border-radius: 50%;
-  color: white;
-  position: absolute;
-`;
 
 const APIkey = process.env.REACT_APP_API_KEY;
 

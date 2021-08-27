@@ -1,7 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+#API keys
+.env
+
 # dependencies
-/node_modules
+# took away the / in front of node modules so that the whole thing doesn't get pushed
+node_modules
 /.pnp
 .pnp.js
 

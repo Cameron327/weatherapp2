@@ -4,6 +4,13 @@ import Axios from "axios";
 import CityComponent from "./components/CityComponent";
 import WeatherComponent from "./components/WeatherInfoComponent";
 
+const aws = require('aws-sdk');
+
+let s3 = new aws.S3({
+  accessAPIkey: process.env.REACT_APP_API_KEY,
+});
+console.log("s3 config apikey: ", s3.config.accessAPIkey);
+
 require('dotenv').config()
 
 export const WeatherIcons = {
@@ -43,7 +50,10 @@ const AppLabel = styled.span`
   font-weight: bold;
 `;
 
-const APIkey = process.env.REACT_APP_API_KEY;
+const APIkey = s3.config.accessAPIkey;
+// const APIkey = process.env.REACT_APP_API_KEY;
+
+console.log("API key: ", APIkey)
 
 function App() {
   const [city, updateCity] = useState();
